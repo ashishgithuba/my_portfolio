@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashish's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about" class="toggle">About</a></li>
+                <li><a href="#services" class="toggle">Services</a></li>
+                <li><a href="#projects" class="toggle">Projects</a></li>
+                <li><a href="#contact" class="toggle">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="intro">
+        <img src="profile.jpg" alt="Profile Photo" class="profile-photo">
+        <h1>Hi, My name is <span>Ashish Singh</span></h1>
+        <p>and I am a passionate Web Developer</p>
+        <div class="buttons">
+            <a href="resume.jpg" class="btn">Download Resume</a>
+            <a href="https://github.com/ashishgithuba" class="btn">Visit GitHub</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="hidden">
+        <h2>About Me</h2>
+        <p>Hello! I'm Ashish Singh, a web developer with a passion for creating dynamic and responsive web applications. I have experience in various technologies and am constantly learning new skills to enhance my expertise.</p>
+        <a href="#intro" class="back">Back to Intro</a>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="hidden">
+        <h2>Services</h2>
+        <p>I offer a range of web development services to help businesses and individuals succeed online.</p>
+        <ul>
+            <li>Responsive Web Design</li>
+            <li>Frontend Development</li>
+            <li>Backend Development</li>
+            <li>E-commerce Solutions</li>
+            <li>Website Maintenance</li>
+        </ul>
+        <a href="#intro" class="back">Back to Intro</a>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="hidden">
+        <h2>Projects</h2>
+        <p>Here are some of the projects I've worked on:</p>
+        <ul>
+            <li><strong>Project 1:</strong> Description of project 1.</li>
+            <li><strong>Project 2:</strong> Description of project 2.</li>
+            <li><strong>Project 3:</strong> Description of project 3.</li>
+            <li><strong>Project 4:</strong> Description of project 4.</li>
+        </ul>
+        <a href="#intro" class="back">Back to Intro</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="hidden">
+        <h2>Contact Me</h2>
+        <p>If you'd like to get in touch, feel free to reach out!</p>
+        <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+        <p>Mobile: <a href="tel:+1234567890">+1234567890</a></p>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <a href="#intro" class="back">Back to Intro</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ashish Singh. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to toggle visibility of sections
+        const toggles = document.querySelectorAll('.toggle');
+        const sections = document.querySelectorAll('section');
+
+        toggles.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+
+                // Hide all sections
+                sections.forEach(section => {
+                    section.classList.add('hidden');
+                });
+
+                // Show the clicked section
+                targetSection.classList.remove('hidden');
+            });
+        });
+
+        // Allow clicking "Back to Intro" link to return to the intro section
+        const backLinks = document.querySelectorAll('.back');
+        backLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Hide all sections
+                sections.forEach(section => {
+                    section.classList.add('hidden');
+                });
+                // Show the intro section
+                document.querySelector('#intro').classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
