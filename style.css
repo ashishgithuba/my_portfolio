@@ -30,10 +30,10 @@ header nav ul li a {
 }
 
 .profile-photo {
-    width: 150px; /* Set the desired width */
-    height: 150px; /* Set the desired height */
-    border-radius: 50%; /* Make it circular */
-    object-fit: cover; /* Ensure the image covers the entire area */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 #intro h1 {
@@ -67,7 +67,7 @@ header nav ul li a {
 
 /* Section Styles */
 section {
-    display: none; /* Hide all sections by default */
+    display: none;
     padding: 20px;
     margin-top: 20px;
     background-color: #1c1c3c;
@@ -75,11 +75,11 @@ section {
 }
 
 section.hidden {
-    display: none; /* Keep hidden sections not displayed */
+    display: none;
 }
 
 section:not(.hidden) {
-    display: block; /* Show active section */
+    display: block;
 }
 
 h2 {
@@ -108,4 +108,46 @@ footer {
     padding: 10px;
     background-color: #0d013f;
     color: white;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    #intro h1 {
+        font-size: 32px;
+    }
+
+    #intro p {
+        font-size: 20px;
+    }
+
+    .profile-photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .buttons a.btn {
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    section {
+        padding: 10px;
+        margin-top: 10px;
+    }
+    
+    footer {
+        padding: 5px;
+    }
 }
